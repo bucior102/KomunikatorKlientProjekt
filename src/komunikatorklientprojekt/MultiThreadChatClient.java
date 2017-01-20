@@ -25,10 +25,8 @@ public class MultiThreadChatClient implements Runnable {
     }
 
     public void run() {
-        /*
-         * Keep on reading from the socket till we receive "Bye" from the
-         * server. Once we received that then we want to break.
-         */
+        //Czytaj dane z soketu az nie otrzymasz "*** Pa pa"
+        //Wtedy wykonaj break;
         String responseLine;
         try {
             while ((responseLine = is.readLine()) != null) {

@@ -36,9 +36,7 @@ public class KomunikatorKlientProjekt {
         // The default host.
         String host = "localhost";
 
-        /*
-         * Open a socket on a given host and port. Open input and output streams.
-         */
+         //Otworz soket na okreslonym porcie i zaiinicjalizuj streamy
         try {
             clientSocket = new Socket(host, portNumber);
             inputLine = new BufferedReader(new InputStreamReader(System.in));
@@ -51,21 +49,16 @@ public class KomunikatorKlientProjekt {
                     + host);
         }
 
-        /*
-         * If everything has been initialized then we want to write some data to the
-         * socket we have opened a connection to on the port portNumber.
-         */
+        //Jezeli wszystko zostalo zainicjalizowane poprawnie zacznij dzialac
         if (clientSocket != null && os != null && is != null) {
             try {
 
-                /* Create a thread to read from the server. */
+                //Stwórz wątek aby czytac z serwera
                 new Thread(new MultiThreadChatClient(is, closed)).start();
                 while (!closed) {
                     os.println(inputLine.readLine().trim());
                 }
-                /*
-                 * Close the output stream, close the input stream, close the socket.
-                 */
+                //Zamknij wszystko
                 os.close();
                 is.close();
                 clientSocket.close();

@@ -13,6 +13,12 @@ import java.io.IOException;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
+/**
+ * Projekt PW - Temat 2: Komunikator sieciowy
+ * Wojciech Bałchanowski i Kacper Dutkiewicz
+ * IJO1
+ * Poniedziałek 9:45
+ */
 public class MultiThreadChatClient implements Runnable {
     
     // The input stream
